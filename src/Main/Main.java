@@ -11,10 +11,9 @@ public class Main {
     public static void main(String[] args) {
         try {
             ServerSocket server = new ServerSocket(6666);
+            System.out.println("server started, waiting....");
             while(true) {
-
-                System.out.println("client connected");
-                 // accept() == blocking method, waits until the client connects
+                 // accept() == blocking method, waits until a client connects
                 ////after the connection i create the thread
                 new Thread(new Lilleserver(server.accept())).start();
             }

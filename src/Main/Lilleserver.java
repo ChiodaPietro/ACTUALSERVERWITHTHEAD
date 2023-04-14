@@ -14,6 +14,7 @@ public class Lilleserver implements Runnable{
     @Override
     public void run(){
         try {
+            System.out.println("client connected");
             PrintWriter writer = new PrintWriter(client.getOutputStream(), true);
             //true, flush, means that the writer sends a line hop to say, "hey i am done writing"; and it flushes everyting it got
             BufferedReader readtheclient = new BufferedReader(new InputStreamReader(client.getInputStream()));
